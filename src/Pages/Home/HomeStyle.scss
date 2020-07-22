@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+  }
+
+  .videoList {
+    margin: 63px;
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+ 
+  

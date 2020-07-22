@@ -1,8 +1,10 @@
 interface IAppState {
   offsetList?: number,
-  isAuthenticatad?: boolean,
+  isAuthenticated?: boolean,
   isLoading?: boolean,
   userEmail?: string,
+  selectedVideo?: string
+  videos?: List<Object>
 }
 
 interface IHomeProps {
@@ -16,5 +18,20 @@ interface ILoginProps {
   mainState: {
     state: Object,
     setState: Dispatch<SetStateAction<IAppState>>
+  }
+}
+
+interface IVideoItem {
+  mainState:{
+    state: Object,
+    handleVideoSelect: Dispatch<SetStateAction<IAppState>>
+  }
+}
+
+
+interface IVideoList {
+  mainState:{
+    state: Object,
+    handleVideoSelect: Dispatch<SetStateAction<IAppState>>
   }
 }

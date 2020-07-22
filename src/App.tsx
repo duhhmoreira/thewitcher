@@ -7,20 +7,24 @@ import Loading from './components/Loading/Loading'
 
 const initialState: IAppState = {
   offsetList: 0,
-  isAuthenticatad: false,
+  isAuthenticated: true,
   isLoading: true,
   userEmail: '',
+  selectedVideo : '',
+  videos : [],
 }
 const App = () => {
   const [state, setState] = useState(initialState)
     setTimeout(()=>{
       setState({isLoading: false})
-    }, 5000)
+    }, 1000)
   return (
     <>
       {console.log('state => ', state)}
       {state.isLoading && <Loading/>}
-      {state.isAuthenticatad ? <Home mainState={{ state, setState }} /> : <Login mainState={{ state, setState }} />}
+      {/* {state.isAuthenticated ? */}
+       <Home mainState={{ state, setState }} /> 
+      {/* : <Login mainState={{ state, setState }} />} */}
     </>
   )
 }

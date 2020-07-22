@@ -1,0 +1,23 @@
+.video {
+    background: white;
+    flex: 0 0 45%;
+    margin: 5px;
+    width: 385px;
+    height: 232px;
+  }
+
+  .root {
+    min-width: 275;
+  }
+  .bullet {
+    display: inline-block;
+    margin: 0 2px;
+    transform: scale(0.8);
+  }
+  .title {
+    font-size: 14px;
+  }
+
+  .pos {
+    margin-bottom: 12px;
+  }
