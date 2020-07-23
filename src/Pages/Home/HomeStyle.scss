@@ -1,14 +1,94 @@
+@import "../../helpers/viewports";
+
 * {
     box-sizing: border-box;
   }
-
+.content{
+  display: flex;
+  flex-direction: row;
+   background-image: url('../../assets/img/backgroundLogin.png');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
   .videoList {
-    margin: 63px;
-    height: 100%;
-    list-style-type: none;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 100%;
+      list-style-type: none;
+    @include viewports(up-to small) {
+      align-items: center;
+      justify-content: center;
+    }
+    @include viewports(above small) {
+      margin: 63px;
+    }
+  
   }
  
+  .display{
+    margin: 0;
+    background-color: #1D1A1A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+.menu{
+  @include viewports(up-to small) {
+   background-color: #1D1A1A;
+   width: 100%!important;
+   height: 55px;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+
+    .buttonTrailers{
+      border:none!important;
+      color: #A99E7E;
+      border-color: #A99E7E;
+    }
+    .buttoLogout{
+      color: #A99E7E;
+    }
+
+    .logoMenu{
+      display: none;
+    }
+    position: fixed;
+    bottom: 0;
+  }
+  @include viewports(above small) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // height: 100%;
+    width: 35%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-right: 1px solid white;
+  }
+}
+.logoListMobile{
+  width: 50%;
+  margin-top: 15px;
+  @include viewports(up-to small) {
+    display: flex;
+  }
+  @include viewports(above small) {
+    display: none;
+  }
+}
+
+.buttonClose{
+  position: absolute!important;
+  color: gray!important;
+  top: 35px;
+  right: 35px;
+}
   

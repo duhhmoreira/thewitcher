@@ -8,30 +8,27 @@ interface IAppState {
 }
 
 interface IHomeProps {
-  mainState: {
-    state: Object,
+    state: IAppState,
     setState: Dispatch<SetStateAction<IAppState>>
-  }
 }
 
 interface ILoginProps {
-  mainState: {
-    state: Object,
+    state: IAppState,
     setState: Dispatch<SetStateAction<IAppState>>
-  }
 }
 
 interface IVideoItem {
-  mainState:{
-    state: Object,
+    video: Object<any>,
     handleVideoSelect: Dispatch<SetStateAction<IAppState>>
-  }
 }
 
 
 interface IVideoList {
-  mainState:{
-    state: Object,
+    state: PropsWithChildren<IAppState>,
     handleVideoSelect: Dispatch<SetStateAction<IAppState>>
-  }
+}
+
+interface IVideoDisplay {
+    state: Object<any>,
+    setState: Dispatch<SetStateAction<IAppState>>
 }
