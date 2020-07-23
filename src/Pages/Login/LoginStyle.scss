@@ -1,4 +1,7 @@
 .login{
+    .logoLogin{
+        margin-bottom: 40px;
+    }
     // background-color: #1D1A1A;
     background-image: url('../../assets/img/backgroundLogin.png');
     background-position: center;
@@ -14,5 +17,21 @@
     .form{
         display: flex;
         flex-direction: column;
+        .input{
+            color:white;
+            border-bottom: white;
+            label{
+                color:white;
+            }
+        }
     }
+}
+.MuiInput-underline{
+    border-color: #A99E7E!important;
+    ::after{
+        border-color: #A99E7E!important;
+    }
+}
+#email-input-label, #password-input-label{
+    color: #A99E7E!important;
 }

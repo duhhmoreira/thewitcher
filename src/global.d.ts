@@ -1,5 +1,5 @@
 interface IAppState {
-  offsetList?: number,
+  pageToken?: string,
   isAuthenticated?: boolean,
   isLoading?: boolean,
   userEmail?: string,
@@ -25,6 +25,7 @@ interface IVideoItem {
 
 interface IVideoList {
     state: PropsWithChildren<IAppState>,
+    setState: Dispatch<SetStateAction<IAppState>>,
     handleVideoSelect: Dispatch<SetStateAction<IAppState>>
 }
 

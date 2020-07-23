@@ -1,3 +1,5 @@
+@import "../../helpers/viewports";
+
 .video {
     background: white;
     flex: 0 0 80%;
@@ -11,22 +13,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    overflow: hidden;
+    @include viewports(up-to small) {
+      justify-content: center;
+    }
   }
-
-  .root {
-    min-width: 275;
-  }
-  .bullet {
-    display: inline-block;
-    margin: 0 2px;
-    transform: scale(0.8);
-  }
-  .title {
-    font-size: 14px;
-  }
-
-  .pos {
-    margin-bottom: 12px;
+  .buttonMore{
+    margin-top: 15px!important;
   }

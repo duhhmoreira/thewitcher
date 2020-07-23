@@ -5,7 +5,7 @@ import Home from './Pages/Home/Home'
 import Loading from './components/Loading/Loading'
 
 const initialState: IAppState = {
-  offsetList: 0,
+  pageToken: '',
   isAuthenticated: false,
   isLoading: true,
   userEmail: '',

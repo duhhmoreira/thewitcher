@@ -1,5 +1,5 @@
 import React, { useState, FC, ChangeEvent } from 'react'
-import { validateLogin } from '../../helpers/Validators'
+import { validateEmail, validatePassword } from '../../helpers/Validators'
 import './LoginStyle.scss'
 import youtube from '../../services/youtube'
 import TextField from '@material-ui/core/TextField';
@@ -7,41 +7,64 @@ import { Button } from '@material-ui/core';
 
 
 const Login: FC<ILoginProps> = ({state, setState}) => {
-  const [formValid, setFormValid] = useState({
-    email: false,
-    password: false
-  })
+  const InputEmail = "email";
+  const InputPassword = "passwrod";
 
-  const getFormValid = (field: string, inputValue: ChangeEvent<HTMLInputElement>) => {
-    if (field === 'email') {
-      setFormValid({...formValid, email: validateLogin('email', inputValue) })
-    } else {
-      setFormValid({ ...formValid, password: validateLogin('password', inputValue) })
-    }
+  const [formValid, setFormValid] = useState({
+    email: true,
+    password: true,
+    formValidate: false
+  })
+  
+  async function changeLogin () {
+   await youtube().then((response) =>{
+      setState({...state, videos: response.data.items, isAuthenticated: true, pageToken: response.data.nextPageToken});
+    });
   }
 
-  async function changeLogin () {
-   await youtube.then((response) =>{
-      setState({...state, videos: response.data.items, isAuthenticated: true});
-    });
+  const validateForm = (field: string, inputValue: string) : void => {
+    field === InputEmail
+    ? setFormValid({...formValid, email : validateEmail(field, inputValue)})
+    : setFormValid({...formValid, password : validatePassword(field, inputValue)});
+
+    if(formValid.email && formValid.password){
+      setFormValid({...formValid, formValidate : true});
+    }
   }
 
   return (
  
     <div className="login">
-      <img src={require("../../assets/img/logo.png")}/>
+      <img src={require("../../assets/img/logo.png")}className="logoLogin"/>
       <form className="form">
 
-      <TextField id="input-email" label="E-mail" onChange={event => getFormValid('email', event.target.value)}/>
-      
-        {/* <input type="email" required placeholder="Email" onChange={event => getFormValid('email', event)} />
-        <input type="password" onChange={event => validateLogin('password', event)} /> */}
-        <Button variant="outlined" color="primary">
-        LOAD MORE
+      <TextField
+       InputProps={{
+        className: "input"
+       }}
+       id="email-input" 
+       label="E-mail" 
+       onChange={event => validateForm(InputEmail, event.target.value)}/>
+       {!formValid.email && <label>E-mail Invalido</label>}
+      <TextField
+          InputProps={{
+            className: "input"
+          }}
+          id="password-input"
+          label="Password"
+          type="password"
+          autoComplete="current-password"
+          onChange={event => validateForm(InputPassword, event.target.value)}
+        />
+         {!formValid.password && <label>Senha Invalida</label>}
+        <Button 
+        disabled={!formValid.formValidate}
+        variant="outlined" 
+        color="primary" 
+        onClick={() => changeLogin()}>
+        Login
       </Button>
       </form>
-      <button
-         onClick={() => changeLogin()}>Login</button>
     </div>
   )
 }
