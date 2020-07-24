@@ -61,6 +61,7 @@ const Login: FC<ILoginProps> = ({state, setState}) => {
         disabled={!formValid.formValidate}
         variant="outlined" 
         color="primary" 
+        className="buttonLogin"
         onClick={() => changeLogin()}>
         Login
       </Button>

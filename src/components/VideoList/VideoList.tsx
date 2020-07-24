@@ -12,9 +12,8 @@ const VideoList: FC<IVideoList> = ({state, handleVideoSelect, setState}) => {
     isLoading: false
   })
   async function moreVideos () {
+    setListVideos({...listVideos, isLoading: true})
     await youtube(state.pageToken).then((response) =>{
-      setListVideos({...listVideos, isLoading: true})
-     
       let concatVideos = state.videos;
       response.data.items.map((item:any) => {
         concatVideos.push(item);
@@ -23,30 +22,43 @@ const VideoList: FC<IVideoList> = ({state, handleVideoSelect, setState}) => {
         setListVideos({...listVideos, isLoading: false})
         setState({...state, videos: concatVideos, pageToken: response.data.nextPageToken});
       } else {
-        setListVideos({...listVideos, isLoading: false})
-        setListVideos({...listVideos, blockButton: true})
+        setListVideos({...listVideos, isLoading: false, blockButton: true})
+        setState({...state, pageToken: null})
       }
      });
    }
    
   return (
     <div className="listVideos">
-      { console.log(listVideos.isLoading)}
     <div className="listVideos">{state.videos.map( (item :any) =>{
         return <VideoItem key={item.id.videoId} video={item}
         handleVideoSelect={handleVideoSelect}/>
-    })}</div>
-    {listVideos.isLoading ? 
-    <CircularProgress color="secondary" />
-    :<Button 
-    className="buttonMore"
-    variant="outlined" 
-    color="primary"
-    disabled={listVideos.blockButton}
-    onClick={()=> moreVideos()}>
-       LOAD MORE
-     </Button>}
-   
+    })}
+    { state.pageToken ? (
+      <div className="divButtonMore">
+      {listVideos.isLoading 
+      ? <CircularProgress color="secondary" />
+        :<Button 
+        className="buttonMore"
+        variant="outlined" 
+        color="primary"
+        disabled={listVideos.blockButton}
+        onClick={()=> moreVideos()}>
+          LOAD MORE
+        </Button>}
+      </div>
+    ) : (
+      <div className="divButtonMore">
+      <Button 
+        className="buttonMore"
+        variant="outlined" 
+        color="primary"
+        disabled={true}
+        onClick={()=> moreVideos()}>
+          NO MORE VIDEOS
+        </Button>
+      </div>)} 
+    </div> 
     </div>
   )
 }

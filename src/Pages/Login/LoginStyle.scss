@@ -18,12 +18,11 @@
         display: flex;
         flex-direction: column;
         .input{
-            color:white;
-            border-bottom: white;
-            label{
-                color:white;
-            }
+           color: white;
         }
+    }
+    .buttonLogin{
+        margin: 15px!important;
     }
 }
 .MuiInput-underline{
@@ -31,7 +30,18 @@
     ::after{
         border-color: #A99E7E!important;
     }
+
+    :disabled{
+        border-color: gray!important;
+    }
 }
 #email-input-label, #password-input-label{
     color: #A99E7E!important;
+}
+
+.MuiInput-underline:after{
+    border-bottom: 2px solid #A99E7E!important;
+}
+.MuiInput-underline:before{
+    border-color: #A99E7E!important;
 }

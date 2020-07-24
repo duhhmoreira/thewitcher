@@ -23,3 +23,18 @@
   .buttonMore{
     margin-top: 15px!important;
   }
+
+  .divButtonMore{
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    align-items: center;
+    margin:15px;
+    overflow: hidden;
+    width: 45%;
+    height: 100%;
+    @include viewports(up-to small) {
+      width: 90%;
+      height: 100%;
+    }
+  }
