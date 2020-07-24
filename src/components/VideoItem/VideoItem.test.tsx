@@ -18,4 +18,9 @@ describe('Video Item Suite', () => {
             handleVideoSelect={handleVideoSelect} />);
         expect(component.find('div')).toEqual(2);
     });
+    it('Video Item Background Test', () => {
+        const component = shallow(<VideoItem key={key} video={video}
+            handleVideoSelect={handleVideoSelect} />);
+        expect(component).toHaveProperty('backgroundImage',  `url(${video.url})` );
+    });
 });
