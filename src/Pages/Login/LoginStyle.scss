@@ -1,47 +1,56 @@
-.login{
-    .logoLogin{
+.login {
+    .logoLogin {
         margin-bottom: 40px;
     }
+
     // background-color: #1D1A1A;
     background-image: url('../../assets/img/backgroundLogin.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;  
+    display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
     height: 100%;
     width: 100%;
     flex-direction: column;
-    .form{
+
+    .form {
         display: flex;
         flex-direction: column;
-        .input{
-           color: white;
+
+        .input {
+            color: white;
         }
     }
-    .buttonLogin{
-        margin: 15px!important;
-    }
-}
-.MuiInput-underline{
-    border-color: #A99E7E!important;
-    ::after{
-        border-color: #A99E7E!important;
-    }
 
-    :disabled{
-        border-color: gray!important;
+    .buttonLogin {
+        margin: 15px !important;
     }
-}
-#email-input-label, #password-input-label{
-    color: #A99E7E!important;
 }
 
-.MuiInput-underline:after{
-    border-bottom: 2px solid #A99E7E!important;
+.MuiInput-underline {
+    border-color: #A99E7E !important;
+
+    ::after {
+        border-color: #A99E7E !important;
+    }
+
+    :disabled {
+        border-color: gray !important;
+    }
 }
-.MuiInput-underline:before{
-    border-color: #A99E7E!important;
+
+#email-input-label,
+#password-input-label {
+    color: #A99E7E !important;
+}
+
+.MuiInput-underline:after {
+    border-bottom: 2px solid #A99E7E !important;
+}
+
+.MuiInput-underline:before {
+    border-color: #A99E7E !important;
 }

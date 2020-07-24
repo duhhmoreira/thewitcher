@@ -45,6 +45,18 @@
   },
   "devDependencies": {
     "@types/enzyme-adapter-react-15": "^1.0.6",
+    "jest": "^24.9.0",
     "react-test-renderer": "^15.6.2"
-  }
+  },
+    "jest": {
+      "collectCoverageFrom": [
+        "src/**/*.{js,jsx,ts,tsx}",
+        "!src/**/*.d.ts",
+        "!src/**/__stories__/",
+        "!<rootDir>/node_modules/"
+      ],
+      "coverageReporters": [
+        "jest-junit"
+      ]
+    }
 }

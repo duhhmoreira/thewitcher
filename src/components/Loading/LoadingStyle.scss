@@ -1,44 +1,44 @@
 .loading {
-  background-color: #1D1A1A;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  z-index: 20;
+    background-color: #1D1A1A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
 
-  .icon {
-      background-image: url('../../assets/img/loader.png');
-      background-position-y: center;
-      background-position-x: 0;
-      background-repeat: no-repeat;
-      animation-name: loading-effect;
-      animation-delay: 0;
-      animation-iteration-count: infinite;
-      animation-timing-function: steps(1);
-      animation-duration: 1s;
-      animation-direction: alternate;
-      display: flex;
-      height: 65px;
-      width: 35.63px;
+    .icon {
+        background-image: url('../../assets/img/loader.png');
+        background-position-y: center;
+        background-position-x: 0;
+        background-repeat: no-repeat;
+        animation-name: loading-effect;
+        animation-delay: 0;
+        animation-iteration-count: infinite;
+        animation-timing-function: steps(1);
+        animation-duration: 1s;
+        animation-direction: alternate;
+        display: flex;
+        height: 65px;
+        width: 35.63px;
 
-      @keyframes loading-effect {
-          0% {
-              background-position-x: 0;
-          }
+        @keyframes loading-effect {
+            0% {
+                background-position-x: 0;
+            }
 
-          25% {
-              background-position-x: -45.79px;
-          }
+            25% {
+                background-position-x: -45.79px;
+            }
 
-          50% {
-              background-position-x: -91.59px;
-          }
+            50% {
+                background-position-x: -91.59px;
+            }
 
-          75% {
-              background-position-x: -136.58px;
-          }
-      }
-  }
+            75% {
+                background-position-x: -136.58px;
+            }
+        }
+    }
 }

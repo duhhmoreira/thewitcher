@@ -9,24 +9,24 @@ const initialState: IAppState = {
   isAuthenticated: false,
   isLoading: true,
   userEmail: '',
-  selectedVideo : '',
-  videos : [],
+  selectedVideo: '',
+  videos: [],
 }
 const App = () => {
   const [state, setState] = useState(initialState);
 
   useEffect(() => {
-    setTimeout(()=>{
-      setState({...state, isLoading: false})
+    setTimeout(() => {
+      setState({ ...state, isLoading: false })
     }, 1000)
   }, [])
 
   return (
     <>
-      {state.isLoading && <Loading/>}
-      {state.isAuthenticated 
-      ? <Home state={state} setState={setState} /> 
-      : <Login state={state} setState={setState} />}  
+      {state.isLoading && <Loading />}
+      {state.isAuthenticated
+        ? <Home state={state} setState={setState} />
+        : <Login state={state} setState={setState} />}
     </>
   )
 }

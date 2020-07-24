@@ -1,111 +1,122 @@
 @import "../../helpers/viewports";
 
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
-  ::-webkit-scrollbar {
-    width: 5px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 1px #A99E7E; 
-    border-radius: 2px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #A99E7E; 
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #A99E7E; 
-  }
+::-webkit-scrollbar {
+  width: 5px;
+}
 
-  body, html, #root{
-    height: 100%;
-    overflow: hidden;
-  }
-.content{
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px #A99E7E;
+  border-radius: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #A99E7E;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #A99E7E;
+}
+
+body,
+html,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+.content {
   display: flex;
   flex-direction: row;
-   background-image: url('../../assets/img/backgroundLogin.png');
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   height: 100%;
+  background-image: url('../../assets/img/backgroundLogin.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }
-  .videoList {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 100%;
-    overflow-x: scroll; 
-    list-style-type: none;
-    @include viewports(up-to small) {
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      margin: 5px;
-      padding-bottom: 100px!important
-    }
-    @include viewports(above small) {
-      padding: 25px;
-      margin-right: 15px;
-      width: 75%;
-      background-color: rgba(0,0,0,0.7);
-    }
-  
-  }
- 
-  .display{
-    margin: 0;
-    background-color: #1D1A1A;
-    display: flex;
+
+.videoList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  overflow-x: scroll;
+  list-style-type: none;
+
+  @include viewports(up-to small) {
     align-items: center;
     justify-content: center;
-    position: fixed;
-    height: 100%;
     width: 100%;
-    z-index: 9;
+    margin: 5px;
+    padding-bottom: 100px !important
+  }
+
+  @include viewports(above small) {
+    padding: 25px;
+    margin-right: 15px;
+    width: 75%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
 }
 
-.menu{
+.display {
+  margin: 0;
+  background-color: #1D1A1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+}
+
+.menu {
   @include viewports(up-to small) {
     z-index: 11;
-   background-color: #1D1A1A;
-   width: 100%!important;
-   height: 55px;
-   display: flex;
-   align-items: center;
-   justify-content: space-around;
+    background-color: #1D1A1A;
+    width: 100% !important;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 
-    .buttonTrailers{
-      border:none!important;
-      color: #A99E7E!important;
-      border-color: #A99E7E!important;
-    }
-    .buttoLogout{
-      color: #A99E7E!important;
+    .buttonTrailers {
+      border: none !important;
+      color: #A99E7E !important;
+      border-color: #A99E7E !important;
     }
 
-    .logoMenu{
+    .buttoLogout {
+      color: #A99E7E !important;
+    }
+
+    .logoMenu {
       display: none;
     }
+
     position: fixed;
     bottom: 0;
-    .MuiButton-outlinedPrimary{
-      width: 100%!important;
-      border-right: 1px solid #A99E7E!important;
+
+    .MuiButton-outlinedPrimary {
+      width: 100% !important;
+      border-right: 1px solid #A99E7E !important;
     }
-    .MuiButton-text{
-      width: 100%!important;
-      
+
+    .MuiButton-text {
+      width: 100% !important;
+
     }
   }
+
   @include viewports(above small) {
     display: flex;
     flex-direction: column;
@@ -116,35 +127,39 @@
     overflow: hidden;
     border-right: 1px solid #A99E7E;
   }
-  .logoMenu{
+
+  .logoMenu {
     margin-bottom: 100px;
   }
 }
-.logoListMobile{
+
+.logoListMobile {
   width: 50%;
   margin-top: 15px;
+
   @include viewports(up-to small) {
     display: flex;
   }
+
   @include viewports(above small) {
     display: none;
   }
 }
 
-.buttonClose{
-  position: absolute!important;
-  color: gray!important;
+.buttonClose {
+  position: absolute !important;
+  color: gray !important;
   top: 35px;
   right: 35px;
 }
 
-.MuiButton-outlinedPrimary{
-  color: #A99E7E!important;
-  border: 1px solid #A99E7E!important;
-  border-radius: 0!important;
+.MuiButton-outlinedPrimary {
+  color: #A99E7E !important;
+  border: 1px solid #A99E7E !important;
+  border-radius: 0 !important;
   width: 250px;
 }
-.MuiButton-text{
-  color: #A99E7E!important;
+
+.MuiButton-text {
+  color: #A99E7E !important;
 }
-  

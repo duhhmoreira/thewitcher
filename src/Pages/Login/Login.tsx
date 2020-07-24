@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
 
 
-const Login: FC<ILoginProps> = ({state, setState}) => {
+const Login: FC<ILoginProps> = ({ state, setState }) => {
   const InputEmail = "email";
   const InputPassword = "passwrod";
 
@@ -15,38 +15,38 @@ const Login: FC<ILoginProps> = ({state, setState}) => {
     password: true,
     formValidate: false
   })
-  
-  async function changeLogin () {
-   await youtube().then((response) =>{
-      setState({...state, videos: response.data.items, isAuthenticated: true, pageToken: response.data.nextPageToken});
+
+  async function changeLogin() {
+    await youtube().then((response) => {
+      setState({ ...state, videos: response.data.items, isAuthenticated: true, pageToken: response.data.nextPageToken });
     });
   }
 
-  const validateForm = (field: string, inputValue: string) : void => {
+  const validateForm = (field: string, inputValue: string): void => {
     field === InputEmail
-    ? setFormValid({...formValid, email : validateEmail(field, inputValue)})
-    : setFormValid({...formValid, password : validatePassword(field, inputValue)});
+      ? setFormValid({ ...formValid, email: validateEmail(field, inputValue) })
+      : setFormValid({ ...formValid, password: validatePassword(field, inputValue) });
 
-    if(formValid.email && formValid.password){
-      setFormValid({...formValid, formValidate : true});
+    if (formValid.email && formValid.password) {
+      setFormValid({ ...formValid, formValidate: true });
     }
   }
 
   return (
- 
+
     <div className="login">
-      <img src={require("../../assets/img/logo.png")}className="logoLogin"/>
+      <img src={require("../../assets/img/logo.png")} className="logoLogin" />
       <form className="form">
 
-      <TextField
-       InputProps={{
-        className: "input"
-       }}
-       id="email-input" 
-       label="E-mail" 
-       onChange={event => validateForm(InputEmail, event.target.value)}/>
-       {!formValid.email && <label>E-mail Invalido</label>}
-      <TextField
+        <TextField
+          InputProps={{
+            className: "input"
+          }}
+          id="email-input"
+          label="E-mail"
+          onChange={event => validateForm(InputEmail, event.target.value)} />
+        {!formValid.email && <label>E-mail Invalido</label>}
+        <TextField
           InputProps={{
             className: "input"
           }}
@@ -56,14 +56,14 @@ const Login: FC<ILoginProps> = ({state, setState}) => {
           autoComplete="current-password"
           onChange={event => validateForm(InputPassword, event.target.value)}
         />
-         {!formValid.password && <label>Senha Invalida</label>}
-        <Button 
-        disabled={!formValid.formValidate}
-        variant="outlined" 
-        color="primary" 
-        className="buttonLogin"
-        onClick={() => changeLogin()}>
-        Login
+        {!formValid.password && <label>Senha Invalida</label>}
+        <Button
+          disabled={!formValid.formValidate}
+          variant="outlined"
+          color="primary"
+          className="buttonLogin"
+          onClick={() => changeLogin()}>
+          Login
       </Button>
       </form>
     </div>

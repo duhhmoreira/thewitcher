@@ -1,11 +1,10 @@
-
 import React, { FC } from 'react';
 
-const VideoDisplay: FC<IVideoDisplay> = ({state, setState}) => {
-    console.log(state.selectedVideo.snippet.resourceId.videoId)
-    const videoSrc = `https://www.youtube.com/embed/${state.selectedVideo.snippet.resourceId.videoId}`;
-    console.log(typeof(state));
-    return (
+const VideoDisplay: FC<IVideoDisplay> = ({ state, setState }) => {
+  console.log(state.selectedVideo.snippet.resourceId.videoId)
+  const videoSrc = `https://www.youtube.com/embed/${state.selectedVideo.snippet.resourceId.videoId}`;
+  console.log(typeof (state));
+  return (
 
     <div
       className="video"
@@ -15,7 +14,7 @@ const VideoDisplay: FC<IVideoDisplay> = ({state, setState}) => {
         paddingTop: -10,
         height: 0
       }}
-    > 
+    >
       <iframe
         style={{
           position: "absolute",
@@ -28,9 +27,9 @@ const VideoDisplay: FC<IVideoDisplay> = ({state, setState}) => {
         frameBorder="0"
       />
     </div>
-        
 
-    )
+
+  )
 }
 
 export default VideoDisplay;
