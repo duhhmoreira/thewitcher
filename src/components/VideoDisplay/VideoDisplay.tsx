@@ -16,6 +16,7 @@ const VideoDisplay: FC<IVideoDisplay> = ({ state, setState }) => {
       }}
     >
       <iframe
+        title="Video Display"
         style={{
           position: "absolute",
           top: 0,

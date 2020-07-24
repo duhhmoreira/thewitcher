@@ -1,4 +1,4 @@
-import React, { useState, FC, ChangeEvent } from 'react'
+import React, { useState, FC } from 'react'
 import { validateEmail, validatePassword } from '../../helpers/Validators'
 import './LoginStyle.scss'
 import youtube from '../../services/youtube'
@@ -35,7 +35,7 @@ const Login: FC<ILoginProps> = ({ state, setState }) => {
   return (
 
     <div className="login">
-      <img src={require("../../assets/img/logo.png")} className="logoLogin" />
+      <img src={require("../../assets/img/logo.png")} alt="Logo The Wither" className="logoLogin" />
       <form className="form">
 
         <TextField

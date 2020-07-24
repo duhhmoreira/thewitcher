@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useEffect } from 'react'
 import VideoList from "../../components/VideoList/VideoList";
 import "./HomeStyle.scss";
 import VideoDisplay from '../../components/VideoDisplay/VideoDisplay';

@@ -15,7 +15,7 @@ const VideoList: FC<IVideoList> = ({ state, handleVideoSelect, setState }) => {
     setListVideos({ ...listVideos, isLoading: true })
     await youtube(state.pageToken).then((response) => {
       let concatVideos = state.videos;
-      response.data.items.map((item: any) => {
+      response.data.items.forEach((item: any) => {
         concatVideos.push(item);
       })
       if (response.data.nextPageToken) {
