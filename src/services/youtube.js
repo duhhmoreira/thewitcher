@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const YoutubeApiKey = "AIzaSyD_HY7_cdO9yuW4HvrmPruzX-eRZe5M_h8";
+const YoutubeApiKey = "";
 const YoutubeApi = "https://www.googleapis.com/youtube/v3/playlistItems";
 const YoutubePlaylist = "PL6t93nUFQQ1ZiXMfhPyhjb0PX3LgEVMcF";
 
